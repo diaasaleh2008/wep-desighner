@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجعات الغولف</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #444;
+            color: white;
+        }
+        
+        /* ===== تنسيق الهيدر ===== */
+        .header {
+            background-color: #f4c842;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: stretch;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: black;
+            margin-left: 20px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #e0b435;
+        }
+
+        .nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+           /* زر القائمة للهواتف */
+           .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: auto;
+            margin-left: 20;
+        }
+
+        /* استجابة للهواتف */
+        @media (max-width: 768px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #f4c842;
+        text-align: center;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.4s ease-in-out;
+    }
+
+    .nav.active {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            background: rgb(255, 255, 255);
+            color: black;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section img {
+            width: 50%;
+            height: 50%;
+            border-radius: 5px;
+        }
+
+        .info {
+            background: #f4c842;
+            width: 100%;
+            text-align: right;
+            padding: 10px;
+        }
+
+        
+        /* ===== تنسيق المحتوى ===== */
+        .container {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 30%; /* يجعل العنصر يأخذ ثلث العرض */
+    min-width: 250px; /* يحدد الحد الأدنى لحجم العنصر */
+}
+        .resorts {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* تباعد بين المربعات */
+        }
+
+        .resort {
+            width: 30%;
+            background: #fff;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px; /* زوايا ملساء */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثيرات عند التحويم */
+        }
+
+        .resort:hover {
+            transform: translateY(-10px); /* تحريك المربع لأعلى عند التحويم */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* زيادة الظل عند التحويم */
+        }
+
+        .resort img {
+            width: 100%;
+            height: 200px; /* ارتفاع ثابت للصور */
+            object-fit: cover; /* تغطية المساحة دون تشويه */
+            border-radius: 10px; /* زوايا ملساء للصور */
+            margin-bottom: 15px;
+        }
+
+        .resort h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333; /* لون داكن للعناوين */
+        }
+
+        .resort p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555; /* لون رمادي للنص */
+        }
+
+        /* ===== نص إضافي أسفل المنتجعات ===== */
+        .extra-text {
+            margin-top: 30px;
+            font-size: 20px;
+            line-height: 1.8;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        /* ===== الفوتر المُحسَّن ===== */
+        .footer {
+            background-color: #444;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 3px solid #f4c842;
+        }
+
+        .footer-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: right;
+        }
+
+        .footer-section h3 {
+            color: #f4c842;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p, 
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #f4c842;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #666;
+        }
+
+        @media (max-width: 768px) {
+            .footer-section {
+                text-align: center;
+            }
+        }
+        @media (max-width: 1024px) {
+    .resorts {
+        flex-wrap: wrap;
+    }
+    
+    .resort {
+        width: 45%; /* يعرض منتجعين في كل صف على الأجهزة المتوسطة */
+    }
+}
+
+@media (max-width: 768px) {
+    .resort {
+        width: 100%; /* يعرض كل منتجع في سطر منفصل */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo 1.png" alt="logo"></a>
+        </div>
+
+        <!-- شريط التنقل -->
+        <div class="nav" id="navbar">
+            <a href="index.html">الرئيسية</a>
+            <a href="من نحن.html">من نحن</a>
+            <a href="الحزم والعروض.html">الحزم والعروض</a>
+            <a href="منتجعاتنا للغولف.html">منتجعات الغولف</a>
+            <a href="الفنادق.html">الفنادق</a>
+            <a href="الملاعب.html">الملاعب</a>
+            <a href="النادي.html">النادي</a>
+            <a href="المطاعم والمقاهي.html">المطاعم والمقاهي</a>
+            <a href="المتجر.html">المتجر</a>
+            <a href="تواصل معنا.html">تواصل معنا</a>
+            <a href="خريطة الموقع.html">خريطة الموقع</a>
+
+        </div>
+
+        <!-- زر القائمة للهواتف -->
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </div>
+
+    <div class="container">
+        <h2>منتجعاتنا للغولف</h2>
+        <div class="resorts">
+            <!-- المنتجع الأول -->
+            <div class="resort">
+                <img src="images/منتجع 1.jpg" alt="منتجع سي فيو">
+                <h3>منتجع "سي فيو" الفاخر</h3>
+                <p>
+                    يقع في البرتغال، ويوفر ملاعب غولف عالمية مع إطلالات على المحيط الأطلسي. يتميز المنتجع بإقامة فاخرة في فيلات خاصة ومرافق ترفيهية متكاملة مثل حمامات السباحة والمنتجعات الصحية.
+                </p>
+            </div>
+
+            <!-- المنتجع الثاني -->
+            <div class="resort">
+                <img src="images/منتجع 2.jpg" alt="منتجع الغولف الذهبي">
+                <h3>منتجع "الغولف الذهبي"</h3>
+                <p>
+                    يقع في منطقة طبيعية خلابة في البرتغال، ويقدم ملعب غولف بطول 18 حفرة مع عوائق طبيعية. يوفر المنتجع إقامة في فنادق فاخرة وخدمات تدريب مع مدربين محترفين.
+                </p>
+            </div>
+
+            <!-- المنتجع الثالث -->
+            <div class="resort">
+                <img src="images/منتتجع 3.jpg" alt="منتجع الغولف الأخضر">
+                <h3>منتجع "الغولف الأخضر"</h3>
+                <p>
+                    يقع في قلب الطبيعة البرتغالية، ويوفر ملعب غولف بطول 18 حفرة مع إطلالات على التلال الخضراء. يتميز المنتجع بإقامة في بيوت شاطئية فاخرة ومرافق ترفيهية مثل رحلات السفاري.
+                </p>
+            </div>
+        </div>
+
+        <div class="extra-text">
+            <p>نوفر لك تجربة فريدة في منتجعاتنا العالمية للغولف، حيث يمكنك الاستمتاع بأفضل الملاعب الفاخرة وخدمات متميزة.</p>
+        </div>
+    </div>
+
+    <!-- الفوتر المُحسَّن -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- قسم الاتصال -->
+            <div class="footer-section">
+                <h3>اتصل بنا</h3>
+                <p>الهاتف: +351 123 456 789</p>
+                <p>البريد الإلكتروني: info@holeinone.com</p>
+                <p>العنوان: البرتغال، لشبونة</p>
+            </div>
+
+            <!-- قسم وسائل التواصل -->
+            <div class="footer-section">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="images/فيسبوك.png" alt="فيسبوك"></a>
+                    <a href="#"><img src="images/تويتر.png" alt="تويتر"></a>
+                    <a href="#"><img src="images/انستجرام.png" alt="إنستجرام"></a>
+                </div>
+            </div>
+
+            <!-- قسم الروابط السريعة -->
+            <div class="footer-section">
+                <h3>روابط مهمة</h3>
+                <a href="سياسة الخصوصية.html">سياسة الخصوصية</a><br>
+                <a href="سياسة الخصوصية.html">شروط الاستخدام</a><br>
+                <a href="سياسة الخصوصية.html">الأسئلة الشائعة</a>
+            </div>
+        </div>
+
+        <!-- حقوق النشر -->
+        <div class="copyright">
+            <p>© 2024 هول ان ون. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // دالة لعرض وإخفاء القائمة المنقولة
+        function toggleMenu() {
+            const nav = document.getElementById("navbar");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

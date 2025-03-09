@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية وشروط الاستخدام - هول إن ون</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #444;
+            color: white;
+        }
+
+        /* شريط الهيدر */
+        .header {
+            background-color: #f4c842;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: black;
+            margin-left: 20px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #e0b435;
+        }
+
+        .nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+         /* زر القائمة للهواتف */
+         .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: auto;
+            margin-left: 20;
+        }
+
+        /* استجابة للهواتف */
+        @media (max-width: 768px) {
+            .nav {
+                display: none; /* إخفاء القائمة افتراضيًا */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #f4c842;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav.active {
+                display: flex; /* عرض القائمة عند إضافة الكلاس active */
+            }
+
+            .menu-icon {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                margin-left: 20px;
+            }
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #f4c842;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            color: #f4c842;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-right: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* الفوتر المُحسَّن */
+        .footer {
+            background-color: #444;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 3px solid #f4c842;
+        }
+
+        .footer-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: right;
+        }
+
+        .footer-section h3 {
+            color: #f4c842;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p, 
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #f4c842;
+        }
+
+        .social-icons-footer {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons-footer img {
+            width: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons-footer img:hover {
+            transform: scale(1.2);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #666;
+        }
+
+        @media (max-width: 768px) {
+            .footer-section {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo 1.png" alt="logo"></a>
+        </div>
+
+        <!-- شريط التنقل -->
+        <div class="nav" id="navbar">
+            <a href="index.html">الرئيسية</a>
+            <a href="من نحن.html">من نحن</a>
+            <a href="الحزم والعروض.html">الحزم والعروض</a>
+            <a href="منتجعاتنا للغولف.html">منتجعات الغولف</a>
+            <a href="الفنادق.html">الفنادق</a>
+            <a href="الملاعب.html">الملاعب</a>
+            <a href="النادي.html">النادي</a>
+            <a href="المطاعم والمقاهي.html">المطاعم والمقاهي</a>
+            <a href="المتجر.html">المتجر</a>
+            <a href="تواصل معنا.html">تواصل معنا</a>
+            <a href="خريطة الموقع.html">خريطة الموقع</a>
+
+        </div>
+
+        <!-- زر القائمة للهواتف -->
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </div>
+
+    <!-- محتوى الصفحة -->
+    <div class="container">
+        <h2>سياسة الخصوصية وشروط الاستخدام</h2>
+
+        <!-- سياسة الخصوصية -->
+        <h3>سياسة الخصوصية</h3>
+        <p>
+            نحن في "هول إن ون" نحرص على حماية خصوصية بيانات عملائنا. تُحدد سياسة الخصوصية كيفية جمع واستخدام وحماية المعلومات الشخصية التي تقدمها لنا. نلتزم بعدم مشاركة معلوماتك مع أي جهات خارجية دون موافقتك.
+        </p>
+        <ul>
+            <li>نقوم بجمع المعلومات الشخصية مثل الاسم ورقم الهاتف والبريد الإلكتروني لتقديم خدمات أفضل.</li>
+            <li>نستخدم البيانات لأغراض تحسين تجربة المستخدم وتقديم عروض مخصصة.</li>
+            <li>نلتزم بحماية بياناتك من الوصول غير المصرح به.</li>
+        </ul>
+
+        <!-- شروط الاستخدام -->
+        <h3>شروط الاستخدام</h3>
+        <p>
+            باستخدامك لموقع "هول إن ون"، فإنك توافق على الالتزام بالشروط والأحكام التالية:
+        </p>
+        <ul>
+            <li>يجب أن تكون المعلومات التي تقدمها صحيحة وكاملة.</li>
+            <li>لا يُسمح باستخدام الموقع لأغراض غير قانونية أو غير أخلاقية.</li>
+            <li>نحتفظ بالحق في تعديل الشروط والأحكام دون إشعار مسبق.</li>
+        </ul>
+
+        <!-- الأسئلة الشائعة -->
+        <h3>الأسئلة الشائعة</h3>
+        <p>
+            هنا بعض الأسئلة الشائعة التي قد تهمك:
+        </p>
+        <ul>
+            <li><strong>كيف يمكنني حجز ملعب غولف؟</strong><br>يمكنك الحجز من خلال صفحة "حجز الملاعب" أو التواصل معنا مباشرة.</li>
+            <li><strong>هل يمكنني إلغاء الحجز؟</strong><br>نعم، يمكنك إلغاء الحجز قبل 24 ساعة من الموعد المحدد.</li>
+            <li><strong>ما هي طرق الدفع المتاحة؟</strong><br>نقبل الدفع نقدًا أو عبر البطاقات الائتمانية.</li>
+        </ul>
+    </div>
+
+    <!-- الفوتر المُحسَّن -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- قسم الاتصال -->
+            <div class="footer-section">
+                <h3>اتصل بنا</h3>
+                <p>الهاتف: +351 123 456 789</p>
+                <p>البريد الإلكتروني: info@holeinone.com</p>
+                <p>العنوان: البرتغال، لشبونة</p>
+            </div>
+
+            <!-- قسم وسائل التواصل -->
+            <div class="footer-section">
+                <h3>تابعنا</h3>
+                <div class="social-icons-footer">
+                    <a href="#"><img src="images/فيسبوك.png" alt="فيسبوك"></a>
+                    <a href="#"><img src="images/تويتر.png" alt="تويتر"></a>
+                    <a href="#"><img src="images/انستجرام.png" alt="إنستجرام"></a>
+                </div>
+            </div>
+
+            <!-- قسم الروابط السريعة -->
+            <div class="footer-section">
+                <h3>روابط مهمة</h3>
+                <a href="سياسة الخصوصية.html">سياسة الخصوصية</a><br>
+                <a href="سياسة الخصوصية.html">شروط الاستخدام</a><br>
+                <a href="سياسة الخصوصية.html">الأسئلة الشائعة</a>
+            </div>
+        </div>
+
+        <!-- حقوق النشر -->                      
+        <div class="copyright">
+            <p>© 2024 هول ان ون. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // دالة لعرض وإخفاء القائمة المنقولة
+        function toggleMenu() {
+            const nav = document.getElementById("navbar");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
